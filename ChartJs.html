@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display:flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; height: 40vh; width: 40vw;"></canvas> 
+    </div>
+    <div>
+        <canvas id="myChart2" style="position: relative; height: 40vh; width: 40vw;"></canvas> 
+    </div>
+    
+</body>
+</html>
+<script>
+    const labels = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'MEU PRIMEIRO GRÁFICO',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 5, 8)', 
+            data:[0, 10, 5, 2, 20, 12, 45, 30, 21, 40],
+        }]
+    };
+
+    const configLine = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const configBar = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+</script>
+<script>
+    const myChart = new Chart (
+        document.getElementById('myChart'),
+        configLine
+    );
+    const myChart2 = new Chart (
+        document.getElementById('myChart2'),
+        configBar
+    );
+</script>
